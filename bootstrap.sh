@@ -51,7 +51,7 @@ if [ $os = Darwin ]; then
     if [ $? != 0 ]; then
       echo "Installing brew package: $pkg .."
 
-      `brew install $pkg`
+      brew install $pkg
       if [ $? != 0 ]; then
         echo "Error: failed installing package: $pkg"
       fi
