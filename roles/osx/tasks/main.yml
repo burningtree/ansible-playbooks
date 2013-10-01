@@ -1,0 +1,6 @@
+---
+
+- include: "{{ item }}.yml"
+  with_items:
+    - homebrew
+    - config

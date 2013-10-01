@@ -1,0 +1,197 @@
+---
+osx_system_prefs: 
+
+  ###############################################################################
+  # General UI/UX                                                               #
+  ###############################################################################
+
+  # Expand save panel by default
+  - NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
+
+  # Disable Resume system-wide
+  - NSGlobalDomain NSQuitAlwaysKeepsWindows -bool false
+
+  # Check for software updates daily, not just once per week
+  - com.apple.SoftwareUpdate ScheduleFrequency -int 1
+
+  ###############################################################################
+  # Trackpad, mouse, keyboard, Bluetooth accessories, and input                 #
+  ###############################################################################
+
+  # Set a blazingly fast keyboard repeat rate
+  - NSGlobalDomain KeyRepeat -int 0
+
+  # Set language and text formats
+  # Note: if you’re in the US, replace `EUR` with `USD`, `Centimeters` with
+  # `Inches`, `en_GB` with `en_US`, and `true` with `false`.
+  - NSGlobalDomain AppleLanguages -array "en" "nl"
+  - NSGlobalDomain AppleLocale -string "cs_CZ@currency=CZK"
+  - NSGlobalDomain AppleMeasurementUnits -string "Centimeters"
+  - NSGlobalDomain AppleMetricUnits -bool true
+
+  # Disable auto-correct
+  - NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
+
+  ###############################################################################
+  # Screen                                                                      #
+  ###############################################################################
+
+  # Require password immediately after sleep or screen saver begins
+  - com.apple.screensaver askForPassword -int 1
+  - com.apple.screensaver askForPasswordDelay -int 0
+
+  # Save screenshots to the ~/Pictures
+  - com.apple.screencapture location -string "$HOME/Pictures"
+
+  # Disable shadow in screenshots
+  #- com.apple.screencapture disable-shadow -bool true
+
+  ###############################################################################
+  # Finder                                                                      #
+  ###############################################################################
+
+  # Show icons for hard drives, servers, and removable media on the desktop
+  - com.apple.finder ShowExternalHardDrivesOnDesktop -bool true
+  - com.apple.finder ShowHardDrivesOnDesktop -bool true
+  - com.apple.finder ShowMountedServersOnDesktop -bool true
+  - com.apple.finder ShowRemovableMediaOnDesktop -bool true
+
+  # Finder: show hidden files by default
+  - com.apple.finder AppleShowAllFiles -bool true
+
+  # Finder: show all filename extensions
+  - NSGlobalDomain AppleShowAllExtensions -bool true
+
+  # Finder: show path bar
+  - com.apple.finder ShowPathbar -bool true
+
+  # Finder: allow text selection in Quick Look
+  - com.apple.finder QLEnableTextSelection -bool true
+
+  # Display full POSIX path as Finder window title
+  - com.apple.finder _FXShowPosixPathInTitle -bool true
+
+  # Disable the warning when changing a file extension
+  - com.apple.finder FXEnableExtensionChangeWarning -bool false
+
+  # Use list view in all Finder windows by default
+  # Four-letter codes for the other view modes: `icnv`, `clmv`, `Flwv`
+  - com.apple.finder FXPreferredViewStyle -string "Nlsv"
+
+  # Disable the warning before emptying the Trash
+  - com.apple.finder WarnOnEmptyTrash -bool false
+
+  # Empty Trash securely by default
+  - com.apple.finder EmptyTrashSecurely -bool true
+
+  # Enable AirDrop over Ethernet and on unsupported Macs running Lion
+  - com.apple.NetworkBrowser BrowseAllInterfaces -bool true
+
+  ###############################################################################
+  # Dock, Dashboard, and hot corners                                            #
+  ###############################################################################
+
+  # Set the icon size of Dock items size (in pixels)
+  - com.apple.dock tilesize -int 47
+
+  # Enable magnification of Dock
+  - com.apple.dock magnification -bool true
+
+  # Set genie effect to magnification
+  - com.apple.dock mineffect -string "genie"
+
+  # Show indicator lights for open applications in the Dock
+  - com.apple.dock show-process-indicators -bool true
+
+  # Animate opening applications from the Dock
+  - com.apple.dock launchanim -bool true
+
+  # Make Dock icons of hidden applications translucent
+  - com.apple.dock showhidden -bool true
+
+  # Hot corners
+  # Possible values:
+  #  0: no-op
+  #  2: Mission Control
+  #  3: Show application windows
+  #  4: Desktop
+  #  5: Start screen saver
+  #  6: Disable screen saver
+  #  7: Dashboard
+  # 10: Put display to sleep
+  # 11: Launchpad
+  # 12: Notification Center
+
+  # Top left screen corner → Mission Control
+  - com.apple.dock wvous-tl-corner -int 2
+  - com.apple.dock wvous-tl-modifier -int 0
+
+  # Top right screen corner → Desktop
+  - com.apple.dock wvous-tr-corner -int 4
+  - com.apple.dock wvous-tr-modifier -int 0
+
+  # Bottom left screen corner → Start screen saver
+  - com.apple.dock wvous-bl-corner -int 5
+  - com.apple.dock wvous-bl-modifier -int 0
+
+  ###############################################################################
+  # Safari & WebKit                                                             #
+  ###############################################################################
+
+  # Set Safari’s home page to `about:blank` for faster loading
+  - com.apple.Safari HomePage -string "about:blank"
+
+  # Prevent Safari from opening ‘safe’ files automatically after downloading
+  - com.apple.Safari AutoOpenSafeDownloads -bool false
+
+  # Hide Safari’s bookmarks bar by default
+  - com.apple.Safari ShowFavoritesBar -bool false
+
+  # Enable Safari’s debug menu
+  - com.apple.Safari IncludeInternalDebugMenu -bool true
+
+  # Enable the Develop menu and the Web Inspector in Safari
+  - com.apple.Safari IncludeDevelopMenu -bool true
+  - com.apple.Safari WebKitDeveloperExtrasEnabledPreferenceKey -bool true
+  - com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled -bool true
+
+  # Add a context menu item for showing the Web Inspector in web views
+  - NSGlobalDomain WebKitDeveloperExtras -bool true
+
+  ###############################################################################
+  # Spotlight                                                                   #
+  ###############################################################################
+
+  ###############################################################################
+  # Terminal                                                                    #
+  ###############################################################################
+
+  # Only use UTF-8 in Terminal.app
+  - com.apple.terminal StringEncodings -array 4
+
+  ###############################################################################
+  # Disk Utility                                                                #
+  ###############################################################################
+
+  # Enable the debug menu in Disk Utility
+  - com.apple.DiskUtility DUDebugMenuEnabled -bool true
+  - com.apple.DiskUtility advanced-image-options -bool true
+
+  ###############################################################################
+  # Mac App Store                                                               #
+  ###############################################################################
+
+  # Enable the WebKit Developer Tools in the Mac App Store
+  - com.apple.appstore WebKitDeveloperExtras -bool true
+
+  # Enable Debug Menu in the Mac App Store
+  - com.apple.appstore ShowDebugMenu -bool true
+
+  ###############################################################################
+  # Google Chrome & Google Chrome Canary                                        #
+  ###############################################################################
+
+  # Allow installing user scripts via GitHub or Userscripts.org
+  - com.google.Chrome ExtensionInstallSources -array "https://*.github.com/*" "http://userscripts.org/*"
+  - com.google.Chrome.canary ExtensionInstallSources -array "https://*.github.com/*" "http://userscripts.org/*"
+

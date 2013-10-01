@@ -1,0 +1,9 @@
+---
+
+- hosts: '{{ target }}'
+  tasks:
+    - group_by: key={{ ansible_distribution }}
+
+- hosts: MacOSX
+  roles:
+    - osx
