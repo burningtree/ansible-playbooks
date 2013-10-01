@@ -7,10 +7,3 @@
   with_items: osx_system_prefs 
   tags: config
 
-- name: add zsh to /etc/shells
-  lineinfile: dest=/etc/shells regexp=^/usr/local/bin/zsh$ line=/usr/local/bin/zsh
-  sudo: yes
-
-- name: set default shell to zsh
-  shell: chsh -s /usr/local/bin/zsh {{ user }}
-  sudo: yes

@@ -7,3 +7,4 @@
 - hosts: MacOSX
   roles:
     - osx
+    - console
