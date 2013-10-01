@@ -7,9 +7,3 @@
   with_items: osx_homebrew_packages
   tags: packages
 
-# Install homeshick
-
-- name: install homeshick
-  git: repo=git://github.com/andsens/homeshick.git
-       dest=~/.homesick/repos/homeshick
-
