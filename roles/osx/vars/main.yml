@@ -1,4 +1,11 @@
 ---
+osx_homebrew_packages:
+  - zsh
+  - apg
+  - tmux
+  - ack
+  - ncdu
+
 osx_system_prefs: 
 
   ###############################################################################

@@ -3,3 +3,4 @@
 - include: "{{ item }}.yml"
   with_items:
     - config
+    - packages
