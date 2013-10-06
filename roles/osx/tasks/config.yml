@@ -6,4 +6,11 @@
   command: defaults write {{ item }}
   with_items: osx_system_prefs 
   tags: config
-  
+
+- name: add zsh to /etc/shells
+  sudo: yes
+  lineinfile: dest=/etc/shells regexp=^/usr/local/bin/zsh line=/usr/local/bin/zsh
+
+- name: set default shell to zsh
+  sudo: yes
+  shell: chsh -s /usr/local/bin/zsh {{ user }} 

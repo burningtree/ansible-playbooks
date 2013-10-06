@@ -15,6 +15,6 @@
   when: homeshick_castle.stdout != "0"
 
 - name: update homeshick
-  shell: ~/.homesick/repos/homeshick/bin/homeshick refresh -b && ~/.homesick/repos/homeshick/bin/homeshick pull -b
+  shell: ~/.homesick/repos/homeshick/bin/homeshick pull -b
 
 
