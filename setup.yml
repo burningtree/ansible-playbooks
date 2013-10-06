@@ -8,3 +8,4 @@
   sudo: no
   roles:
     - osx
+    - console

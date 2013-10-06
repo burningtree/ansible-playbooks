@@ -5,6 +5,7 @@ osx_homebrew_packages:
   - tmux
   - ack
   - ncdu
+  - autojump
 
 osx_system_prefs: 
 
