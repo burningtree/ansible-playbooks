@@ -8,4 +8,5 @@
   sudo: no
   roles:
     - osx
-    - console
+    - fish
+    - vim

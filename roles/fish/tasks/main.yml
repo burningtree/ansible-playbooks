@@ -1,0 +1,2 @@
+---
+  - template: src=config.fish dest=~/.config/fish/config.fish

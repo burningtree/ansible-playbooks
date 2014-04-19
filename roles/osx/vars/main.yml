@@ -1,11 +1,12 @@
 ---
 osx_homebrew_packages:
-  - zsh
+  - fish
   - apg
   - tmux
   - ack
   - ncdu
   - autojump
+  - mtr
 
 osx_system_prefs: 
 

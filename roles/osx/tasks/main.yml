@@ -1,7 +1,26 @@
 ---
 
-- include: "{{ item }}.yml"
-  with_items:
-    - packages
-    - homeshick
-    - config
+# Set basic `defaults` preferences
+
+- name: set system preferences
+  command: defaults write {{ item }}
+  with_items: osx_system_prefs 
+  tags: config
+
+# Install packages
+
+- name: install homebrew packages
+  homebrew: name={{item}} state=present
+  with_items: osx_homebrew_packages
+  tags: packages
+
+# Set default shell
+
+- name: add fish to /etc/shells
+  sudo: yes
+  lineinfile: dest=/etc/shells regexp=^/usr/local/bin/fish line=/usr/local/bin/fish
+
+- name: set default shell to fish
+  sudo: yes
+  shell: chsh -s /usr/local/bin/fish {{ user }} 
+

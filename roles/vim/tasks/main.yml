@@ -1,0 +1,11 @@
+---
+
+- name: basic .vimrc
+  copy: src=vimrc dest=~/.vimrc
+
+- name: install pathogen runtime manipulator
+  get_url: url=https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim dest=~/.vim/autoload/pathogen.vim
+
+- name: install color theme
+  git: repo=git://github.com/junegunn/seoul256.vim.git
+       dest=~/.vim/bundle/seoul256.vim
