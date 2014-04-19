@@ -5,3 +5,5 @@ set fish_greeting ""
 function fish_title
   pwd
 end
+
+set PATH $PATH /usr/local/bin /usr/local/sbin ~/.mysetup/bin

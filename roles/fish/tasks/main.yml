@@ -1,2 +1,5 @@
 ---
-  - template: src=config.fish dest=~/.config/fish/config.fish
+
+- name: copy Fish config
+  template: src=config.fish dest=~/.config/fish/config.fish
+
